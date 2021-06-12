@@ -1,74 +1,89 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="fa">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Devecart</title>
+    <title>DevCard از موسسه آتریا</title>
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">   
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <script defer src="~/assets/fontawesome/js/all.js"></script>
+    <link  rel="stylesheet" href="~/assets/css/theme-1.css">
+    <link  rel="stylesheet" href="~/assets/css/style.css">
+
 </head>
+
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+
+    <header class="header text-center">
+        <div class="force-overflow">
+            <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">سعيد انصاري</a></h1>
+
+            <nav class="navbar navbar-expand-lg navbar-dark">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Devecart</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
+
+                <div id="navigation" class="collapse navbar-collapse flex-column">
+                    <div class="profile-section pt-3 pt-lg-0">
+                        <img class="profile-image mb-3 rounded-circle mx-auto" src="~/assets/images/me.jpeg" alt="image">
+
+                        <div class="bio mb-3">
+                            سلام، سعيد انصاري هستم به وبسایت شخصی من خوش
+                            آمدید.
+                        </div>
+                        <ul class="social-list list-inline py-2 mx-auto">
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
+                            <li class="list-inline-item">
+                                <a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a>
+                            </li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
+                        </ul>
+                        <hr>
+                    </div>
+                    <ul class="navbar-nav flex-column text-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Home")">
+                                <i class="fas fa-user fa-fw ml-2"></i>صفحه اصلی
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Contact">
+                                <i class="fas fa-envelope-open-text fa-fw ml-2"></i>ارتباط با ما
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+         </nav>
         </div>
-    </nav>
+    </header>
 
-    <partial name="_CookieConsentPartial" />
-
-    <div class="container body-content">
+    <div class="main-wrapper">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2021 - Devecart</p>
+
+        <footer class="footer text-center py-4">
+            <small class="copyright">
+                تولید شده توسط &copy; <a href="http://www.atriya.com" target="_blank">
+                    موسسه آموزشی
+                    آتریا
+                </a>
+            </small>
         </footer>
+
     </div>
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-
-    @RenderSection("Scripts", required: false)
+    <!-- Javascript -->
+    <script src="~/assets/plugins/jquery-3.4.1.min.js"></script>
+    <script src="~/assets/plugins/popper.min.js"></script>
+    <script src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 </body>
+
 </html>
