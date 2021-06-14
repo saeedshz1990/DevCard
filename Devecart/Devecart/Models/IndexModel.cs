@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Devecart.ViewComponents;
+using Devecart.Controllers;
+using Devecart.Models;
 
 namespace Devecart.Models
 {

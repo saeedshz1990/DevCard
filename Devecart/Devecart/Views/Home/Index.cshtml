@@ -34,15 +34,21 @@
     </div>
 </section>
 
-@* Start Loading Partial View *@
+@* Start Loading Partial View   //is  True answered Partial view *@
 
 @*<partial name="Projects"/>*@
 
-@await Html.PartialAsync("Projects")
+@*@await Html.PartialAsync("Projects")*@
 
 
 @* //End Loading Partial View *@
 
+
+@* Start Loading View Component *@
+
+@await Component.InvokeAsync("Projects")
+
+@* // End Loading View Component *@
 
 <div class="container">
     <hr>
