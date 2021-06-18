@@ -29,10 +29,16 @@ namespace Devecart.Controllers
 
 
             [HttpPost]
-        public JsonResult Contact(Contact form)
+        public IActionResult Contact(Contact model)
         {
-            Console.WriteLine(form.ToString());
-            return Json(data: Ok());
+            if(!ModelState.IsValid)
+            {
+                ViewBag.error = "اطلاعات وارد شده اشتباه می باشد لطفا دوباره تلاش کنید......";
+                return View(model);
+            }
+            ViewBag.success = "نظر شما با موفقیت ارسال شد.باتشکر";
+            return View();
+            //return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
