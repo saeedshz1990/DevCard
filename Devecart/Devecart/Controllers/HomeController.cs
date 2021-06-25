@@ -4,6 +4,7 @@ using Devecart.Models;
 using RestSharp;
 using Microsoft.AspNetCore.Http;
 using System;
+using Devecart.Data;
 
 namespace Devecart.Controllers
 {
@@ -13,6 +14,15 @@ namespace Devecart.Controllers
         {
             return View();
         }
+
+
+
+        public IActionResult ProjectDetails(long id)
+        {
+            var project = ProjectsStore.GetProjectBy(id);
+            return View(project);
+        }
+
 
         [HttpGet]
         public IActionResult Contact()

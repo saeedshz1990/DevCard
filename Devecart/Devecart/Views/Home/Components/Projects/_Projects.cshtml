@@ -15,7 +15,7 @@
                             <div class="col-lg-8">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="project.html" class="theme-link">
+                                        <a asp-controller="Home" asp-action="ProjectDetails" asp-route-id="@project.Id" class="theme-link">
                                            @project.Id : @project.Name
                                         </a>
                                     </h5>

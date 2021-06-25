@@ -1,0 +1,55 @@
+﻿@model Project
+@{
+    ViewData["Title"] = "ProjectDetails";
+}
+
+<section class="cta-section theme-bg-light py-5">
+    <div class="container text-center single-col-max-width">
+        <h2 class="heading">ارتباط با ما</h2>
+        <div class="intro">
+            <p>
+                شما می توانید از طریق فرم زیر با ما ارتباط بگیرید. لطفا پس از پرکردن آیتم ها، پیغام مورد نظر را
+                نوشته و ارسال کنید.
+            </p>
+            <p>از طریق شبکه های اجتماعی با ما در ارتباط باشید</p>
+           
+        </div>
+    </div>
+
+</section>
+<section class="contact-section px-3 py-5 p-md-5">
+    <div class="container">
+       
+
+        <table class="table table-bordered table-hover table">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Image</td>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>Client</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>@Model.Id</td>
+                    <td> <img src="~/assets/images/project/@Model.Image" width="100px"/></td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Description</td>
+                    <td>@Model.Client</td>
+
+                </tr>
+
+            </tbody>
+            
+
+        </table>
+
+
+    </div>
+</section>
+
+
+
